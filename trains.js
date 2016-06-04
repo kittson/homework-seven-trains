@@ -15,11 +15,25 @@ var trains = [
 ]; //var trains
 
 function displayTime() {
-    var time = moment().format('hh:mm:ss a');
+    //var time = moment().format('hh:mm:ss a');
+    var time = moment().format('MM/YYYY');
     $('#currentTime').html("Current Time Is:  " + time);
     //$('#currentTime').append(time);
     setTimeout(displayTime, 1000);
+
+
 };
+
+/////
+var employeeEndDate = moment("05/15/1965");
+///var myDate = employeeEndDate.diff(moment().format('MM/DD/YYYY'), 'years') *-1;
+var myDate = employeeEndDate.diff(moment().format('MM/DD/YYYY'));
+console.log(moment(myDate).format('Y'));
+console.log('hello!!', myDate);
+
+
+
+
 
 function displayTrainTimeLeft() {
 
