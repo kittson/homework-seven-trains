@@ -36,7 +36,7 @@
 		<div class="row">
 			<div class="col-md-8">
 				<h3>Current Trains Schedule</h3>
-				<table class="table allTrains table-striped"> 
+				<table class="table table-striped" id="allTrains"> 
 					<thead>
 						<tr>
 							<th>Train Name</th>
@@ -46,51 +46,39 @@
 							<th>Minutes Away</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr id="trainsArea">
-							<!-- <td class="trainName"></td>
-							<td id="dest"></td>
-							<td id="freq"></td>
-							<td id="nxt"></td>
-							<td id="lefttime"></td> -->
-							<td></td><td></td><td></td><td></td><td></td>
-						</tr>
+					<tbody>																			
 					</tbody>						
-					</table>
-				</div>
+				</table>
 			</div>
 		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<h3>Add A New Train to Schedule</h3>
-					<form class="addTrain">
-						<table class="table addTrains">
-						<tbody>
-							<tr>
-								<td>Train Name</td>
-								<td><input type="text" id="newTrainName"></td>
-							</tr>
-							<tr>
-								<td>Destination</td>
-								<td><input type="text" id="trainDest"></td>
-							</tr>		  
-							<tr>	
-								<td>First Arrival Time</td>
-								<td><input type="text" id="trainNxt"></td>
-							</tr>		
-							<tr>
-								<td>Frequency</td>
-								<td><input type="text" id="trainFreq"></td>
-							</tr>		
-							<tr>
-								<td><button type="submit" class="btn btn-default" id="scheduleTrain"><i>Submit</i> </button></td> 
-							</tr>	
-						</tbody> 
-						</table>
+	</div>
+	<div class="col-md-8">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">Add A New Train to Schedule</h3>
+				<div class="panel-body">
+					<form>
+						<div class="form-group">
+							<label for="">Train Name</label>
+							<input type="text" class="form-control" id="newTrainNameInp">
+						</div>
+						<div class="form-group">	
+							<label for="">Destination</label>
+							<input type="text" class="form-control" id="trainDestInp">
+						</div>
+						<div class="form-group">		
+							<label for="">First Arrival Time hh:mm am/pm</label>
+							<input type="text" class="form-control" id="trainNxtInp">
+						</div>		
+						<div class="form-group">	
+							<label for="">Frequency (in minutes)</label>
+							<input type="text" class="form-control" id="trainFreqInp">
+						</div>															
+						<button type="submit" class="btn btn-primary" id="trainSubmit">Submit</button> 
 					</form>
-				</div>	
-			</div>
-		</div>	
-	</body>
-	</html>
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>
