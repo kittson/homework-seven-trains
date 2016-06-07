@@ -6,32 +6,23 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="train.css">
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-	<script src="moment.js"></script>
-	<script type="text/javascript" src="trains.js"></script>
-	
+		
 </head>
 <body>
-
 	<div class="container">
 		<div class="row">
-
 			<div class="col-md-4">								
 				<h2 class="text-right"><strong>Train Schedule</strong></h2>
 				<h4 class="text-right">check your arrival time</h4>				
-				<h4 id="currentTime" class="text-right">Current Time Is:  </h4>
-				
+				<h4 id="currentTime" class="text-right">Current Time Is:  </h4>				
 			</div>
 			<div class="col-md-6">
-				<img src="traind.png" alt="the denver zephyr" height="280px"  >
+				<img src="trainf.png" alt="Broadway Limited" height="280px"  >
 			</div>
 			<div class="col-md-2">
-			</div>
-			
+			</div>			
 		</div> <!-- row -->
 	</div> <!-- container -->
-
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
@@ -52,33 +43,39 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-8">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">Add A New Train to Schedule</h3>
-				<div class="panel-body">
-					<form>
-						<div class="form-group">
-							<label for="">Train Name</label>
-							<input type="text" class="form-control" id="newTrainNameInp">
-						</div>
-						<div class="form-group">	
-							<label for="">Destination</label>
-							<input type="text" class="form-control" id="trainDestInp">
-						</div>
-						<div class="form-group">		
-							<label for="">First Arrival Time hh:mm am/pm</label>
-							<input type="text" class="form-control" id="trainNxtInp">
-						</div>		
-						<div class="form-group">	
-							<label for="">Frequency (in minutes)</label>
-							<input type="text" class="form-control" id="trainFreqInp">
-						</div>															
-						<button type="submit" class="btn btn-primary" id="trainSubmit">Submit</button> 
-					</form>
-				</div>
-			</div>	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class = "panel panel-default">
+					<h3>Add A New Train to Schedule</h3>
+					<div class = "panel-body">
+						<form class="addTrain">
+							<div class="form-group">
+								<label for="">Train Name</label>
+								<input type="text" class="form-control" id="newTrainNameInp">
+							</div>
+							<div class="form-group">	
+								<label for="">Destination</label>
+								<input type="text" class="form-control" id="trainDestInp">
+							</div>
+							<div class="form-group">		
+								<label for="">First Arrival Time h:m am/pm</label>
+								<input type="text" class="form-control" id="trainNxtInp">
+							</div>		
+							<div class="form-group">	
+								<label for="">Frequency (in minutes)</label>
+								<input type="text" class="form-control" id="trainFreqInp">
+							</div>															
+							<button type="submit" class="btn btn-primary" id="trainSubmit">Submit</button> 
+						</form>
+					</div>
+				</div>	
+			</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+	<script src="moment.js"></script>
+	<script type="text/javascript" src="trains.js"></script>
 </body>
 </html>

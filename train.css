@@ -1,5 +1,26 @@
 
 h2, h3, th, td, label {
-    font-family: 'Didact Gothic', sans-serif;
+	font-family: 'Didact Gothic', sans-serif;
+}
+.panel {
+	border: 0;
+}
+thead, .panel-body {
+	background-color: #F6F4E2;
 }
 
+.btn-primary {
+	background: #FFFFFF;
+	color: #502C01;
+	border-color: #666666; 
+}
+.btn-primary:hover {
+	background: #502C01;
+	color: #FFFFFF;
+	border-color: #502C01;
+}
+
+
+* {
+	border-radius: 0 !important;
+}
