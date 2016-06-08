@@ -17,8 +17,8 @@ $("#trainSubmit").on("click", function(){
 
 	var newTrainName = $("#newTrainNameInp").val().trim();
 	var trainDest = $("#trainDestInp").val().trim();
-	var trainNxt = $("#trainNxtInp").val().trim();
-	//var trainNxt = moment($("#trainNxtInp").val().trim(), 'h:mm a').format("X");
+	//var trainNxt = $("#trainNxtInp").val().trim();
+	var trainNxt = moment($("#trainNxtInp").val().trim(), 'h:mm a').format("X");
 	//var trainFirst = moment($("#trainNxtInp").val().trim());
 	var trainFreq = $("#trainFreqInp").val().trim();
 	//var trainFreq = moment($("#trainFreqInp").val().trim(), 'mm').format("X");
@@ -58,22 +58,28 @@ trainSchedule.on("child_added", function(childSnapshot, prevChildKey){
 	var trainFreq = childSnapshot.val().freq;	
 
 	var minutesTilArrival;
-
+	console.log("trainNxt " + trainNxt);
 	//console.log(childSnapshot.val());
 	/*var a = moment([2007, 0, 28]);
 	var b = moment([2007, 0, 29]);
 	console.log("atob " + a.to(b)); // "in a day"
 	*/
-	
+	console.log(typeof trainNxt);
 	//console.log("trainFreq down is " + trainFreq);
-	var timeX = moment().format("X"); 
+	var timeX = moment(); 
 	var timeConvert = moment.unix(); //nan 
 	//console.log("timeX? " + timeX);
 	//console.log("timeConvert? " + timeConvert);
 	//console.log("trainNxt for newTrainName " + trainNxt + " " + newTrainName);
-
+	var thisTime = moment(parseInt(trainNxt));
 	//minutesTilArrival = trainNxt - timeX; // s/b in X format	
-	//minutesTilArrival = trainNxt.diff(timeX, "minutes");
+	minutesTilArrival2 = timeX.diff(thisTime, "minutes");
+	console.log(minutesTilArrival2)
+	console.log(typeof minutesTilArrival2)
+	console.log("minutesTilArrival2 " + moment(minutesTilArrival2).format("hh:mm"));
+
+
+
 	var convTrainNxt = moment.unix(trainNxt).format("h:mm a"); 
 	console.log("convTrainNxt " + convTrainNxt);	
 	minutesTilArrival = moment().diff(moment(convTrainNxt), "minutes");	
