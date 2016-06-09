@@ -43,7 +43,7 @@
 		// 5 + 3:16 = 3:21
 
 		// Assumptions
-		var tFrequency = 3;
+		var tFrequency = 10;
 		var firstTime = "03:30"; // Time is 3:30 AM
 
 		// First Time (pushed back 1 year to make sure it comes before current time)
@@ -54,7 +54,12 @@
 		// Current Time
 		//var currentTime = moment();
 		//console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+		now = moment();
+		nowformatted = moment().format( "hh:mm a");
 
+
+		console.log("now is " + now);
+		console.log("formatted " + nowformatted);
 		// Difference between the times
 		var diffTime = moment().diff(firstTimeConverted, "minutes");
 		console.log("DIFFERENCE IN TIME: " + diffTime);

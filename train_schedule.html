@@ -5,13 +5,12 @@
 	<title>Train Schedule</title>	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="train.css">
-		
+	<link rel="stylesheet" href="train.css">	
 </head>
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4">								
+			<div class="col-md-2">								
 				<h2 class="text-right"><strong>Train Schedule</strong></h2>
 				<h4 class="text-right">check your arrival time</h4>				
 				<h4 id="currentTime" class="text-right">Current Time Is:  </h4>				
@@ -19,13 +18,12 @@
 			<div class="col-md-6">
 				<img src="trainf.png" alt="Broadway Limited" height="280px"  >
 			</div>
-			<div class="col-md-2">
-			</div>			
+			<div class="col-md-8"></div>						
 		</div> <!-- row -->
 	</div> <!-- container -->
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-6">
 				<h3>Current Trains Schedule</h3>
 				<table class="table table-striped" id="allTrains"> 
 					<thead>
@@ -41,6 +39,7 @@
 					</tbody>						
 				</table>
 			</div>
+
 		</div>
 	</div>
 	<div class="container">
@@ -59,8 +58,8 @@
 								<input type="text" class="form-control" id="trainDestInp">
 							</div>
 							<div class="form-group">		
-								<label for="">First Arrival Time h:m am/pm</label>
-								<input type="text" class="form-control" id="trainNxtInp">
+								<label for="">First Arrival Time hh:mm</label>
+								<input type="text" class="form-control" id="trainFirstInp">
 							</div>		
 							<div class="form-group">	
 								<label for="">Frequency (in minutes)</label>
