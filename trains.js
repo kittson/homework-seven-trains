@@ -21,6 +21,7 @@ $("#trainSubmit").on("click", function(){
 		dest: trainDest,
 		freq: trainFreq,
 		nxt: trainFirstTime,
+		mins: minutesTil,
 	}
 
 	trainSchedule.push(newTrainData);
@@ -44,20 +45,23 @@ trainSchedule.on("child_added", function(childSnapshot, prevChildKey){
 	console.log(trainFirstConverted);
 
 	var diffTime = moment().diff(trainFirstConverted, "minutes");
-	console.log("DIFFERENCE IN TIME: " + diffTime);	
+	console.log("Difference: " + diffTime);	
 
 	var tRemainder = diffTime % trainFreq;
 	console.log(tRemainder);
 
 	var minutesTilTrain = trainFreq - tRemainder;
-	console.log("MINUTES TILL TRAIN: " + minutesTilTrain);
+	console.log("Minutes until train: " + minutesTilTrain);
 
 	var nextTrain = moment().add(minutesTilTrain, "minutes");
-	console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+	console.log("Next Arrival Time: " + moment(nextTrain).format("hh:mm"));
 
 	$("#allTrains > tbody").append("<tr><td>" + newTrainName +
 		"</td><td>" + trainDest +
 		"</td><td>" + trainFreq +
 		"</td><td>" + moment(nextTrain).format("hh:mm") + 		
 		"</td><td>" + minutesTilTrain + "</td></tr>"); 
+
+	//trainSchedule.update({ nxt:'moment(nextTrain).format("hh:mm")', mins:'minutesTilTrain'});
+
 });
