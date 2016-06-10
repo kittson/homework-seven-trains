@@ -1,11 +1,11 @@
 ///homework seven, train schedule
-var trainSchedule = new Firebase("https://kittson-trains.firebaseio.com/");
+var trainSchedule = new Firebase("https://kittson-trains-hw7.firebaseio.com/");
 function displayTime() {
- //var time = moment().format('hh:mm:ss a');
- var timeNow = moment().format('h:mm:ss a');
- $('#currentTime').html("Current Time Is:  " + timeNow);
- //$('#currentTime').append(time);
- setTimeout(displayTime, 1000);
+	//var time = moment().format('hh:mm:ss a');
+	var timeNow = moment().format('h:mm:ss a');
+	$('#currentTime').html("Current Time Is:  " + timeNow);
+	//$('#currentTime').append(time);
+	setTimeout(displayTime, 1000);
  };
  displayTime();
 
@@ -16,12 +16,14 @@ $("#trainSubmit").on("click", function(){
 	var trainDest = $("#trainDestInp").val().trim();		
 	var trainFirstTime = $("#trainFirstInp").val().trim();
 	var trainFreq = $("#trainFreqInp").val().trim();
+	var minutesTil = 0;
+	
 	var newTrainData = {
 		trainName: newTrainName,
 		dest: trainDest,
 		freq: trainFreq,
-		nxt: trainFirstTime,
-		mins: minutesTil,
+		nxt: trainFirstTime,	
+		mins: minutesTil	
 	}
 
 	trainSchedule.push(newTrainData);
@@ -61,7 +63,5 @@ trainSchedule.on("child_added", function(childSnapshot, prevChildKey){
 		"</td><td>" + trainFreq +
 		"</td><td>" + moment(nextTrain).format("hh:mm") + 		
 		"</td><td>" + minutesTilTrain + "</td></tr>"); 
-
-	//trainSchedule.update({ nxt:'moment(nextTrain).format("hh:mm")', mins:'minutesTilTrain'});
 
 });
