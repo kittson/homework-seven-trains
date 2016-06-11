@@ -1,5 +1,5 @@
 ///homework seven, train schedule
-var trainSchedule = new Firebase("https://kittson-trains-hw7.firebaseio.com/");
+var trainSchedule = new Firebase("https://kittson-train.firebaseio.com/");
 function displayTime() {
 	//var time = moment().format('hh:mm:ss a');
 	var timeNow = moment().format('h:mm:ss a');
